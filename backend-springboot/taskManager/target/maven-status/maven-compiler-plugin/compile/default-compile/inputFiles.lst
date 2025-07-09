@@ -1,9 +1,0 @@
-/Users/joebinr/Documents/springProjects/taskManager/src/main/java/com/example/taskManager/taskManager/TaskManagerApplication.java
-/Users/joebinr/Documents/springProjects/taskManager/src/main/java/com/example/taskManager/taskManager/config/ModelMapperConfig.java
-/Users/joebinr/Documents/springProjects/taskManager/src/main/java/com/example/taskManager/taskManager/controller/TaskController.java
-/Users/joebinr/Documents/springProjects/taskManager/src/main/java/com/example/taskManager/taskManager/dto/TaskDTO.java
-/Users/joebinr/Documents/springProjects/taskManager/src/main/java/com/example/taskManager/taskManager/entity/Sample.java
-/Users/joebinr/Documents/springProjects/taskManager/src/main/java/com/example/taskManager/taskManager/entity/Task.java
-/Users/joebinr/Documents/springProjects/taskManager/src/main/java/com/example/taskManager/taskManager/exception/GlobalExceptionHandler.java
-/Users/joebinr/Documents/springProjects/taskManager/src/main/java/com/example/taskManager/taskManager/repository/TaskRepository.java
-/Users/joebinr/Documents/springProjects/taskManager/src/main/java/com/example/taskManager/taskManager/service/TaskService.java
