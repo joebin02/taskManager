@@ -1,15 +1,12 @@
-package com.example.taskManager.taskManager.controller;
+package com.example.taskManager.taskManager.restcontroller;
 
 
 import com.example.taskManager.taskManager.dto.TaskDTO;
-import com.example.taskManager.taskManager.entity.Task;
 import com.example.taskManager.taskManager.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
