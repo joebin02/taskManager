@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/taskManager/pom.xml" />
+        <option value="$PROJECT_DIR$/backend-springboot/taskManager/pom.xml" />
       </list>
     </option>
   </component>

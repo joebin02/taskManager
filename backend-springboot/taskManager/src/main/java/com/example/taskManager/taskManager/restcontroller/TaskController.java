@@ -4,11 +4,13 @@ package com.example.taskManager.taskManager.restcontroller;
 import com.example.taskManager.taskManager.dto.TaskDTO;
 import com.example.taskManager.taskManager.service.TaskService;
 import jakarta.validation.Valid;
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/tasks")
@@ -39,5 +41,20 @@ public class TaskController {
     public ResponseEntity<TaskDTO> deleteTask(@PathVariable Long id){
         TaskDTO deletedTask = taskService.deleteTask(id);
         return ResponseEntity.status(200).body(deletedTask);
+    }
+
+    //update task with id
+    @PutMapping("/{id}")
+    public ResponseEntity<TaskDTO> updateTask(@PathVariable Long id, @RequestBody TaskDTO updatedTask){
+        TaskDTO updated = taskService.updateTask(id,updatedTask);
+        return ResponseEntity.status(200).body(updated);
+    }
+
+    //update only status of a task
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<TaskDTO> updateStatusOfTask(@PathVariable Long id, @RequestBody Map<String,String> requestBody){
+        String status = requestBody.get("status");
+        TaskDTO updated = taskService.updateStatusOfTask(id,status);
+        return ResponseEntity.status(200).body(updated);
     }
 }
