@@ -37,6 +37,13 @@ public class TaskController {
         return ResponseEntity.ok(taskDTO);
     }
 
+    //to filter with status
+    @GetMapping("status/{status}")
+    public ResponseEntity<List<TaskDTO>> getTasksByStatus(@PathVariable String status){
+        List<TaskDTO> taskDTO = taskService.getTasksByStatus(status);
+        return ResponseEntity.status(200).body(taskDTO);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<TaskDTO> deleteTask(@PathVariable Long id){
         TaskDTO deletedTask = taskService.deleteTask(id);

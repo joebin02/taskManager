@@ -47,6 +47,26 @@ public class TaskService {
         return modelMapper.map(task,TaskDTO.class);
     }
 
+    //get task by status
+    public List<TaskDTO> getTasksByStatus(String status) {
+        //checks for null and blank values
+        if (status == null || status.isBlank()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Status is required");
+        }
+
+        //validates the legit status codes
+        List<String> allowedStatuses = Arrays.asList("PENDING", "IN_PROGRESS", "DONE", "COMPLETED");
+        if (!allowedStatuses.contains(status.toUpperCase())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid status value");
+        }
+
+        List<Task> filteredTasks = taskRepository.findByStatusIgnoreCase(status);
+
+        return filteredTasks.stream()
+                .map(tasks -> modelMapper.map(tasks,TaskDTO.class))
+                .collect(Collectors.toList());
+    }
+
     //Delete a task
     public TaskDTO deleteTask(Long id){
         Task task = taskRepository.findById(id)
